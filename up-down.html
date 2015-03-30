@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>		
+  <title>Keyawesome</title>
+  <meta charset="UTF-8" />					
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { background: #ccc; overflow: hidden; }
+    #box {
+        width: 600px;
+        margin-left: 450px;
+        height: 360px;
+        margin-top: 75px;
+        background: #ef2525;
+        transition: all .01s ease;
+        -webkit-transition: all .05s ease;
+        box-shadow: 10px 10px 10px rgba(255, 5, 5, 0.2);
+    }
+  </style>
+ <body>
+  <div id="box"></div>   
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script>
+      $(function() {
+         var scale = 1;
+         $("body").on("keydown", function(e) {
+            if(e.keyCode === 40) { // navigate down
+              if(scale > 0.2) {
+                scale -= 0.1;
+                $("#box").css("transform", "scale("+scale+")");
+                $("#box").css("margin-left", parseFloat($("#box").css("margin-left"))+6);
+                $("#box").css("margin-top", parseFloat($("#box").css("margin-top"))-10);
+              }
+            }
+            else if(e.keyCode === 38) { // navigate up
+              if(scale < 2.5) {
+                scale += 0.1;              
+                $("#box").css("transform", "scale("+scale+")");
+                $("#box").css("margin-left", parseFloat($("#box").css("margin-left"))-6);
+                $("#box").css("margin-top", parseFloat($("#box").css("margin-top"))+10);
+              }
+            }
+          });
+      });
+  </script>
+ </body>
+</html>
+
+
