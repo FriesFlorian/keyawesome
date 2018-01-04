@@ -7,7 +7,7 @@ void setup() {
 
 void loop() {
   while (digitalRead(btnPin) == HIGH) {
-    // do nothing until pin 2 goes low
+    // do nothing until pin 5 goes low
     delay(100);
   }
   
